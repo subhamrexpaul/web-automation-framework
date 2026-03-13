@@ -133,6 +133,7 @@ public class LoginPage {
      */
     public boolean isPageLoaded() {
         try {
+            WaitUtils.waitForVisibility(driver, loginLogo);
             return loginLogo.isDisplayed();
         } catch (Exception e) {
             return false;

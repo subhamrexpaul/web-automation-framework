@@ -239,8 +239,9 @@ public class HomePage {
      */
     public LoginPage logout() {
         openBurgerMenu();
-        WaitUtils.waitForClickability(driver, logoutLink);
-        logoutLink.click();
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
+        WaitUtils.waitForVisibility(driver, logoutLink);
+        new org.openqa.selenium.interactions.Actions(driver).moveToElement(logoutLink).click().perform();
         logger.info("Logged out");
         return new LoginPage(driver);
     }

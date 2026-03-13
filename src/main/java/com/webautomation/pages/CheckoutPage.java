@@ -3,6 +3,7 @@ package com.webautomation.pages;
 import com.webautomation.utils.WaitUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -82,19 +83,32 @@ public class CheckoutPage {
      * @param lastName   customer last name
      * @param postalCode customer postal/zip code
      */
+    private void setReactInputValue(WebElement input, String value) {
+        if (value == null || value.isEmpty()) return;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String script = 
+            "let input = arguments[0];" +
+            "let lastValue = input.value;" +
+            "input.value = arguments[1];" +
+            "let event = new Event('input', { bubbles: true });" +
+            "event.simulated = true;" +
+            "let tracker = input._valueTracker;" +
+            "if (tracker) { tracker.setValue(lastValue); }" +
+            "input.dispatchEvent(event);";
+        js.executeScript(script, input, value);
+    }
+
+    /**
+     * Fills the checkout information form.
+     */
     public CheckoutPage fillCheckoutInfo(String firstName, String lastName, String postalCode) {
         WaitUtils.waitForVisibility(driver, firstNameInput);
+        
+        setReactInputValue(firstNameInput, firstName);
+        setReactInputValue(lastNameInput, lastName);
+        setReactInputValue(postalCodeInput, postalCode);
 
-        firstNameInput.clear();
-        firstNameInput.sendKeys(firstName);
-
-        lastNameInput.clear();
-        lastNameInput.sendKeys(lastName);
-
-        postalCodeInput.clear();
-        postalCodeInput.sendKeys(postalCode);
-
-        logger.info("Filled checkout info: {} {} {}", firstName, lastName, postalCode);
+        logger.info("Filled checkout info (JS workaround enforced): {} {} {}", firstName, lastName, postalCode);
         return this;
     }
 
@@ -102,8 +116,10 @@ public class CheckoutPage {
      * Clicks the Continue button on checkout step one.
      */
     public CheckoutPage clickContinue() {
+        WaitUtils.waitForVisibility(driver, continueButton);
         WaitUtils.waitForClickability(driver, continueButton);
-        continueButton.click();
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
+        new org.openqa.selenium.interactions.Actions(driver).moveToElement(continueButton).click().perform();
         logger.info("Clicked continue button");
         return this;
     }
@@ -134,11 +150,15 @@ public class CheckoutPage {
      * Clicks the Finish button on the checkout overview page.
      */
     public CheckoutPage clickFinish() {
+        WaitUtils.waitForVisibility(driver, finishButton);
         WaitUtils.waitForClickability(driver, finishButton);
-        finishButton.click();
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
+        new org.openqa.selenium.interactions.Actions(driver).moveToElement(finishButton).click().perform();
         logger.info("Clicked finish button");
         return this;
     }
+
+
 
     // ==================== Getters ====================
 
