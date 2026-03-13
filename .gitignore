@@ -39,3 +39,7 @@ logs/
 
 # Log files
 *.log
+
+# AI Assistant
+.gemini/
+.agents/

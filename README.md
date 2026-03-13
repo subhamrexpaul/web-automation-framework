@@ -2,10 +2,10 @@
 
 A production-grade **Selenium WebDriver** automation framework for testing web applications, built with **Java**, **TestNG**, **Maven**, and integrated with **Jenkins CI** pipeline.
 
-![Java](https://img.shields.io/badge/Java-11-orange?style=flat-square&logo=openjdk)
-![Selenium](https://img.shields.io/badge/Selenium-4.15-green?style=flat-square&logo=selenium)
-![TestNG](https://img.shields.io/badge/TestNG-7.8-blue?style=flat-square)
-![Maven](https://img.shields.io/badge/Maven-3.9-red?style=flat-square&logo=apache-maven)
+![Java](https://img.shields.io/badge/Java-11+-orange?style=flat-square&logo=openjdk)
+![Selenium](https://img.shields.io/badge/Selenium-4.27.0-green?style=flat-square&logo=selenium)
+![TestNG](https://img.shields.io/badge/TestNG-7.10.2-blue?style=flat-square)
+![Maven](https://img.shields.io/badge/Maven-3.9+-red?style=flat-square&logo=apache-maven)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=flat-square&logo=jenkins)
 
 ---
@@ -177,14 +177,14 @@ The `Jenkinsfile` defines a declarative pipeline:
 
 | Technology | Purpose |
 |-----------|---------|
-| Java 11 | Programming language |
-| Selenium WebDriver 4.15 | Browser automation |
-| TestNG 7.8 | Test framework & assertions |
-| Maven 3.9 | Build & dependency management |
-| WebDriverManager 5.6 | Automatic driver binary management |
-| ExtentReports 5.1 | Rich HTML test reporting |
-| Apache POI 5.2 | Excel data reading for data-driven tests |
-| Log4j2 2.22 | Structured logging |
+| Java 11+ | Programming language |
+| Selenium WebDriver 4.27.0 | Browser automation |
+| TestNG 7.10.2 | Test framework & assertions |
+| Maven 3.9+ | Build & dependency management |
+| WebDriverManager 5.9.2 | Automatic driver binary management |
+| ExtentReports 5.1.2 | Rich HTML test reporting |
+| Apache POI 5.3.0 | Excel data reading for data-driven tests |
+| Log4j2 2.24.3 | Structured logging |
 | Jenkins | CI/CD pipeline |
 
 ---
