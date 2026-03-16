@@ -34,7 +34,7 @@
         </classes>
     </test>
 
-    <test name="Search & Filter Tests">
+    <test name="Search &amp; Filter Tests">
         <classes>
             <class name="com.webautomation.tests.SearchTests"/>
         </classes>
