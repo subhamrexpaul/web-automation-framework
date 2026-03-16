@@ -46,6 +46,14 @@ jobs:
           EXPLICIT_WAIT: 30
           PAGE_LOAD_TIMEOUT: 60
 
+      - name: Rename report to index.html for GitHub Pages
+        run: |
+          mkdir -p reports
+          if [ -f reports/AutomationReport.html ]; then
+            cp reports/AutomationReport.html reports/index.html
+          fi
+        if: always()
+
       - name: Upload ExtentReport to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main' && always()
