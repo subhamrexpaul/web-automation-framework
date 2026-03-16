@@ -7,6 +7,14 @@ A production-grade **Selenium WebDriver** automation framework for testing web a
 ![TestNG](https://img.shields.io/badge/TestNG-7.10.2-blue?style=flat-square)
 ![Maven](https://img.shields.io/badge/Maven-3.9+-red?style=flat-square&logo=apache-maven)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=flat-square&logo=jenkins)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?style=flat-square&logo=github-actions)
+![ExtentReports](https://img.shields.io/badge/ExtentReports-5.1.2-purple?style=flat-square)
+![Apache POI](https://img.shields.io/badge/Apache%20POI-5.3.0-red?style=flat-square)
+![Log4j2](https://img.shields.io/badge/Log4j2-2.24.3-yellow?style=flat-square)
+![WebDriverManager](https://img.shields.io/badge/WebDriverManager-5.9.2-blue?style=flat-square)
+![MIT License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+📊 **Live Test Report**: https://subhamrexpaul.github.io/web-automation-framework/
 
 ---
 
@@ -186,9 +194,29 @@ The `Jenkinsfile` defines a declarative pipeline:
 | Apache POI 5.3.0 | Excel data reading for data-driven tests |
 | Log4j2 2.24.3 | Structured logging |
 | Jenkins | CI/CD pipeline |
+| GitHub Actions | CI/CD pipeline for automated test execution on every push |
 
 ---
 
 ## 📄 License
+This project is licensed under the **MIT License** —
+see below for details.
 
-This project is licensed under the MIT License.
+MIT License
+
+Copyright (c) 2026 Subham Paul
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files, to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall
+be included in all copies or substantial portions of the Software.
+
+---
+*© 2026 [Subham Paul](https://github.com/subhamrexpaul).
+All rights reserved.*
